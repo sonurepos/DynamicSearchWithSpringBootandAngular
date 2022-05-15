@@ -1,0 +1,13 @@
+#we are using h2 databse so we have to insert data every startup of spring boot so 
+#we have to inform to spring boot to perform jpa opertaion for insert then will load insert scripts
+server:
+  port: 1234
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    password: sa
+    url: jdbc:h2:mem:testdb
+    username: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true  
